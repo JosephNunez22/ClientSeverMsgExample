@@ -1,13 +1,10 @@
-package org.example.clientsevermsgexample;
-
+package org.example.clientsevermsgexample.controller;
 
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -42,8 +39,6 @@ public class MainController implements Initializable {
 
     @FXML
     private Button clearBtn;
-
-
 
     @FXML
     private TextArea resultArea;
@@ -82,10 +77,7 @@ public class MainController implements Initializable {
             resultArea.appendText(host + " not listening on port "
                     + port + "\n");
         }
-
-
     }
-
 
     @FXML
     void clearBtn(ActionEvent event) {
@@ -93,8 +85,6 @@ public class MainController implements Initializable {
         urlName.setText("");
 
     }
-
-
 
     @FXML
     void startServer(ActionEvent event) {
@@ -115,16 +105,13 @@ public class MainController implements Initializable {
         stage.setTitle("Server");
         stage.show();
 
-
         new Thread(this::runServer).start();
-
     }
 
     String message;
 
     private void runServer() {
         try {
-
             ServerSocket serverSocket = new ServerSocket(6666);
             updateServer("Server is running and waiting for a client...");
             while (true) { // Infinite loop
@@ -203,8 +190,6 @@ public class MainController implements Initializable {
 
 
     private void connectToServer(ActionEvent event) {
-
-
         try {
             socket1 = new Socket("localhost", 6666);
 
@@ -221,8 +206,6 @@ public class MainController implements Initializable {
         } catch (Exception e) {
             updateTextClient("Error: " + e.getMessage() + "\n");
         }
-
-
     }
 
     private void updateTextClient(String message) {

@@ -6,6 +6,9 @@ module org.example.clientsevermsgexample {
 
     opens org.example.clientsevermsgexample to javafx.fxml;
 
-    exports org.example.clientsevermsgexample;
+    exports org.example.clientsevermsgexample.model;
+    opens org.example.clientsevermsgexample.model to javafx.fxml;
+    exports org.example.clientsevermsgexample.controller;
+    opens org.example.clientsevermsgexample.controller to javafx.fxml;
 
 }

@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.example.clientsevermsgexample/org.example.clientsevermsgexample.NetworkApplication
+                                org.example.clientsevermsgexample/org.example.clientsevermsgexample.model.NetworkApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
